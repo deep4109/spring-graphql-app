@@ -26,10 +26,17 @@ public class StudentResponse {
 	private String street;
 
 	private String city;
-	
+
+	private String fullName;
+
+	//this is for internal use .Do not use in schema
 	private List<SubjectResponse> learningSubjects;
+
+	//this for internal use DO not put in schema
+	private Student student;
 	
 	public StudentResponse (Student student) {
+		this.student=student;
 		this.id = student.getId();
 		this.firstName = student.getFirstName();
 		this.lastName = student.getLastName();
@@ -37,13 +44,13 @@ public class StudentResponse {
 		
 		this.street = student.getAddress().getStreet();
 		this.city = student.getAddress().getCity();
-		
-		if (student.getLearningSubjects() != null) {
-			learningSubjects = new ArrayList<SubjectResponse>();
-			for (Subject subject: student.getLearningSubjects()) {
-				learningSubjects.add(new SubjectResponse(subject));
-			}
-		}
+//
+//		if (student.getLearningSubjects() != null) {
+//			learningSubjects = new ArrayList<SubjectResponse>();
+//			for (Subject subject: student.getLearningSubjects()) {
+//				learningSubjects.add(new SubjectResponse(subject));
+//			}
+//		}
 	}
 
 }
