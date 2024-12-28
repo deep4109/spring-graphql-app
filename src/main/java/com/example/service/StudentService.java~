@@ -32,7 +32,6 @@ public class StudentService {
     }
 
     public Student getStudent(long id) {
-        System.out.println("Inside getstudentByID");
         return studentRepository.findById(id).get();
     }
 
